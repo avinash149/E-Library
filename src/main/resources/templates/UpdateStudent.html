@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="card ">
+
+    <div class="card-header" style="background-color: #ADD8E6">
+        <h5>Update Student !</h5>
+    </div>
+
+    <div class="card-body">
+        <form action="/updateStudent" method="post">
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Student ID</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="id" th:value="${s.id}" placeholder="Enter Student ID" required readonly />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Name</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="name" th:value="${s.name}" placeholder="Enter Name" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Branch</label>
+                <div class="col-md-9">
+                    <select class="form-control" name="branch">
+                        <option value="BCA" th:selected="${s.branch=='BCA'}">BCA</option>
+                        <option value="B.Tech" th:selected="${s.branch=='B.Tech'}">B.Tech</option>
+                        <option value="BBA" th:selected="${s.branch=='BBA'}">BBA</option>
+                        <option value="MCA" th:selected="${s.branch=='MCA'}">MCA</option>
+                        <option value="MBA" th:selected="${s.branch=='MBA'}">MBA</option>
+                        <option value="M.Tech" th:selected="${s.branch=='M.Tech'}">M.Tech</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Semester</label>
+                <div class="col-md-9">
+                    <select class="form-control" name="sem">
+                        <option th:value="Sem-I" th:selected="${s.sem=='Sem-I'}">Sem-I</option>
+                        <option th:value="Sem-II" th:selected="${s.sem=='Sem-II'}">Sem-II</option>
+                        <option th:value="Sem-III" th:selected="${s.sem=='Sem-III'}">Sem-III</option>
+                        <option th:value="Sem-IV" th:selected="${s.sem=='Sem-IV'}">Sem-IV</option>
+                        <option th:value="Sem-V" th:selected="${s.sem=='Sem-V'}">Sem-V</option>
+                        <option th:value="Sem-VI" th:selected="${s.sem=='Sem-VI'}">Sem-VI</option>
+                        <option th:value="Sem-VII" th:selected="${s.sem=='Sem-VII'}">Sem-VII</option>
+                        <option th:value="Sem-VIII" th:selected="${s.sem=='Sem-VIII'}">Sem-VIII</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Mobile</label>
+                <div class="col-md-9">
+                    <!-- 				      	<input type="text" class="form-control bfh-phone" data-country="US"> -->
+                    <input type="number" class="form-control" name="mob" th:value="${s.mob}" placeholder="Enter Mobile Number" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Email</label>
+                <div class="col-md-9">
+                    <input type="email" class="form-control" name="email" th:value="${s.email}" placeholder="Enter email id" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Address</label>
+                <div class="col-md-9">
+                    <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Enter Address" required />
+                        <th:block th:text="${s.address}" />
+                    </textarea>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <button type="submit" class="col-md-4 btn btn-primary">Update</button>
+                    &nbsp; <label class="col-form-label">View Student? <a href="viewStudent">click here</a></label>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

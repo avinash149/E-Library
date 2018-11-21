@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    table {
+        width:50%;
+    }
+
+    table, th, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+        font-size: 20px;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table#t01 tr:nth-child(odd) {
+       background-color: #fff;
+    }
+
+    table#t01 th {
+        background-color: #ADD8E6;
+        color: black;
+        font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<h5> Hi <th:block th:text="${studname}" />, </h5>
+<p style="font-weight:300%">The below item has been issued/returned.</p>
+
+<table id="t01">
+  <tr>
+    <th>Book Id</th>
+    <th>Book Name</th> 
+    <th>Auther</th>
+    <th>Issued Date</th> 
+    <th>Return Date</th>
+  </tr>
+  <tbody th:if="${not #lists.isEmpty(lib)}">
+  <tr th:each="l : ${lib}">
+    <td th:text="${l.bookid}" />
+    <td th:text="${l.bookname}" />
+    <td th:text="${l.author}" />
+    <td th:text="${l.date}" />
+    <td th:text="${l.duedate}" />
+  </tr>
+  </tbody>
+</table>
+<br>
+<span style="color: red;">Note:This is system genreted mail. Please do not reply.</span>
+<p>Regards, <br><b>Team Admin</b></p>
+</body>
+</html>

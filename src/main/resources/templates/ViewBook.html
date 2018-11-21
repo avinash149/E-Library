@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="card ">
+    <div class="card-header" style="background-color: #ADD8E6">
+        <h5>View Books!</h5>
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead bgcolor=#ADD8E6>
+            <tr>
+                <th style="width:10%">Id</th>
+                <th style="width:25%">Name</th>
+                <th style="width:25%">Author</th>
+                <th style="width:25%">Quantity</th>
+                <th style="width:10%">Edit</th>
+                <th style="width:10%">Delete</th>
+            </tr>
+            </thead>
+            <tbody th:if="${not #lists.isEmpty(bookList)}">
+            <!--<c:forEach items="${studList}" var="s">-->
+                <tr th:each="b : ${bookList}">
+                    <td th:text="${b.id}"></td>
+                    <td th:text="${b.name}"></td>
+                    <td th:text="${b.author}"></td>
+                    <td th:text="${b.qty}"></td>
+                    <td><a th:href="@{/editBook(id=${b.id})}">Edit</a></td>
+                    <td><a th:href="@{/deleteBook(id=${b.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

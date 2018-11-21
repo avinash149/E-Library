@@ -1,0 +1,7 @@
+Project Requirement Tools to be download:
+	(1) Xamp
+	(2) STS(Spring Tool Suit) IDE
+
+Database:
+	(1) Create "User account that name is "elibrary" and password is "1234".
+	(2) Import "elibrary.sql" file.

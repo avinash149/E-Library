@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+    <div class="card  alert alert-warning">
+        <h5>
+            <th:block th:text="${msg}"/>
+        </h5>
+    </div>
+
+    <th:block th:include="${content}"/>
+
+</body>
+</html>

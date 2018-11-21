@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="card ">
+    <div class="card-header" style="background-color: #ADD8E6">
+        <h5>Student Report!</h5>
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-bordered table-striped table-hover">
+
+            <thead bgcolor=#ADD8E6>
+            <tr>
+                <th style="width:10%">Id</th>
+                <th style="width:25%">Name</th>
+                <th style="width:25%">Branch</th>
+                <th style="width:25%">Issued</th>
+                <th style="width:25%">View</th>
+            </tr>
+            </thead>
+            <tbody th:if="${not #lists.isEmpty(studList)}">
+            <!--<c:forEach items="${studList}" var="s">-->
+                <tr th:each="s : ${studList}">
+                    <td th:text="${s.id}"></td>
+                    <td th:text="${s.name}"></td>
+                    <td th:text="${s.branch}"></td>
+                    <td th:text="${s.issue}"></td>
+                    <td><a href="viewStudent?id=${s.id}">view</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

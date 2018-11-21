@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="card ">
+
+    <div class="card-header" style="background-color: #ADD8E6">
+        <h5>Add Book !</h5>
+    </div>
+
+    <div class="card-body">
+        <form action="/bookAdded" method="post">
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Book ID</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="id" placeholder="Enter Book ID" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label"> Book Name</label>
+                <div class="col-md-9">
+                <input type="text" class="form-control" name="name" placeholder="Enter Book Name" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Author Name</label>
+                <div class="col-md-9">
+                <input type="text" class="form-control" name="author" placeholder="Enter Author Name" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Quantity</label>
+                <div class="col-md-9">
+                    <input type="number" class="form-control" name="qty" placeholder="Enter quantity" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <button type="submit" class="col-md-4 btn btn-primary">Add</button>
+                    &nbsp; <label class="col-form-label">View Book <a href="/viewBook">click here</a></label>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

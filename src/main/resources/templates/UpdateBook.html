@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="card ">
+
+    <div class="card-header" style="background-color: #ADD8E6">
+        <h5>Update Book !</h5>
+    </div>
+
+    <div class="card-body">
+        <form action="/updateBook" method="post">
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Book ID</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="id" th:value="${b.id}" placeholder="Enter Book ID" required readonly/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label"> Book Name</label>
+                <div class="col-md-9">
+                <input type="text" class="form-control" name="name" th:value="${b.name}" placeholder="Enter Book Name" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Author Name</label>
+                <div class="col-md-9">
+                <input type="text" class="form-control" name="author" th:value="${b.author}" placeholder="Enter Author Name" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Quantity</label>
+                <div class="col-md-9">
+                    <input type="number" class="form-control" name="qty" th:value="${b.qty}" placeholder="Enter quantity" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <button type="submit" class="col-md-12 btn btn-primary">Update</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

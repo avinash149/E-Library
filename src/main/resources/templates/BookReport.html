@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="card ">
+    <div class="card-header" style="background-color: #ADD8E6">
+        <h5>Book Report!</h5>
+    </div>
+
+    <div class="card-body">
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label">Book_ID</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="bookID" placeholder="Enter Book ID" required/>
+            </div>
+
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="name" placeholder="Book Name" readonly/>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped table-hover">
+
+            <thead bgcolor=#ADD8E6>
+            <tr>
+                <th style="width:10%">Id</th>
+                <th style="width:25%">Name</th>
+                <th style="width:25%">Author</th>
+                <th style="width:25%">Total</th>
+                <th style="width:25%">Issued</th>
+                <th style="width:25%">Avail</th>
+            </tr>
+            </thead>
+            <tbody th:if="${not #lists.isEmpty(bookList)}">
+            <!--<c:forEach items="${studList}" var="s">-->
+                <tr th:each="b : ${bookList}">
+                    <td th:text="${b.id}"></td>
+                    <td th:text="${b.name}"></td>
+                    <td th:text="${b.author}"></td>
+                    <td th:text="${b.total}"></td>
+                    <td th:text="${b.issue}"></td>
+                    <td th:text="${b.avail}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="card">
+
+    <div class="card-header" style="background-color: #ADD8E6">
+        <h5>Issue Book !</h5>
+    </div>
+
+    <div class="card-body">
+        <form action="/bookIssued" method="post">
+
+            <input type="hidden" class="form-control" name="id" th:value="0" />
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Student ID</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="studID" name="studid" th:value="${s.id}" th:onchange="fetchData();" placeholder="Enter Student ID" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label"> Student Name</label>
+                <div class="col-md-9">
+                <input type="text" class="form-control" name="studname" th:value="${s.name}" placeholder="Student Name" readonly/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Book ID</label>
+                <div class="col-md-9">
+                <input type="text" class="form-control" id="bookID" name="bookid" th:value="${b.id}" th:onchange="fetchData();" placeholder="Enter Book ID" required/>
+                </div>
+            </div>
+
+                 <div class="form-group row">
+                <label class="col-md-3 col-form-label">Book Name</label>
+                <div class="col-md-9">
+                <input type="text" class="form-control" name="bookname" th:value="${b.name}" placeholder="Book Name" readonly/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Author Name</label>
+                <div class="col-md-9">
+                <input type="text" class="form-control" name="author" th:value="${b.author}" placeholder="Author Name" readonly/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Issue date</label>
+                <div class="col-md-9">
+                    <input type="date" class="form-control" name="date" value="2018/11/16" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Return date</label>
+                <div class="col-md-9">
+                    <input type="date" class="form-control" name="duedate" value="2018/11/16" required/>
+                </div>
+            </div>
+
+            <input type="hidden" class="form-control" name="status" th:value="I" />
+
+            <div class="form-group row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <button type="submit" class="col-md-4 btn btn-primary">Issue</button>
+                    &nbsp; <label class="col-form-label">View Issue Book <a href="/viewBook">click here</a></label>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    function fetchData() {
+        var studID = document.getElementById("studID").value;
+        var bookID = document.getElementById("bookID").value;
+        window.location='fetch?studID='+studID+'&bookID='+bookID;
+    }
+</script>

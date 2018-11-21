@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="card">
+
+    <div class="card-header" style="background-color: #ADD8E6">
+        <h5>Add Student !</h5>
+    </div>
+
+    <div class="card-body">
+        <form action="/studentAdded" method="post" modelAttribute="student">
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Student ID</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="id" placeholder="Enter Student ID" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Name</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Branch</label>
+                <div class="col-md-9">
+                    <select class="form-control" name="branch">
+                        <option value="BCA">BCA</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="BBA">BBA</option>
+                        <option value="MCA">MCA</option>
+                        <option value="MBA">MBA</option>
+                        <option value="M.Tech">M.Tech</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Semester</label>
+                <div class="col-md-9">
+                    <select class="form-control" name="sem">
+                        <option value="Sem-I">Sem-I</option>
+                        <option value="Sem-II">Sem-II</option>
+                        <option value="Sem-III">Sem-III</option>
+                        <option value="Sem-IV">Sem-IV</option>
+                        <option value="Sem-V">Sem-V</option>
+                        <option value="Sem-VI">Sem-VI</option>
+                        <option value="Sem-VII">Sem-VII</option>
+                        <option value="Sem-VIII">Sem-VIII</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Mobile</label>
+                <div class="col-md-9">
+                    <!-- 				      	<input type="text" class="form-control bfh-phone" data-country="US"> -->
+                    <input type="number" class="form-control" name="mob" placeholder="Enter Mobile Number" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Email</label>
+                <div class="col-md-9">
+                    <input type="email" class="form-control" name="email" placeholder="Enter email id" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Address</label>
+                <div class="col-md-9">
+                    <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Enter Address" required> </textarea>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <button type="submit" class="col-md-4 btn btn-primary">Add</button>
+                    &nbsp; <label class="col-form-label">View Student? <a href="viewStudent">click here</a></label>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
